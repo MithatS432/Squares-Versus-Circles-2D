@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Friends Bullet
   - Enemies Bullet
+  - FB
+  - EB
   layers:
   - Default
   - TransparentFX
