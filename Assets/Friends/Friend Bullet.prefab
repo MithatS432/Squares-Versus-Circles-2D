@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 116802607448328100}
   - component: {fileID: 4248117760368974317}
   - component: {fileID: -1597043198668738513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Friend Bullet
   m_TagString: Friends Bullet
   m_Icon: {fileID: 0}
