@@ -8,6 +8,8 @@ TagManager:
   - Enemies Bullet
   - FB
   - EB
+  - FBar
+  - FO
   layers:
   - Default
   - TransparentFX
