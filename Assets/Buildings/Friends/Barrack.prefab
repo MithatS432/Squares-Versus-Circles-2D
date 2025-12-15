@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4358191195232509617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Friend Spawn Pos (2)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5491683372679400399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Friend Spawn Pos (3)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692821867092410348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Friend Spawn Pos (1)
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8351775136484945489}
   - component: {fileID: 3668912334465207861}
   - component: {fileID: 2292276570354861483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrack
   m_TagString: FBar
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7242758063394436857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Friend Spawn Pos
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}

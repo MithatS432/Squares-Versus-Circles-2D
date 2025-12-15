@@ -345,14 +345,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -675,14 +667,6 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1745,14 +1729,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2428,14 +2404,6 @@ PrefabInstance:
     - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
       propertyPath: m_Name
       value: Outpost (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9178705608794295075, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4619,14 +4587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9178705608794295075, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5667,25 +5627,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1585676409745571728, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763321403351469903, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842569559032593090, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6040,25 +5984,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1585676409745571728, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763321403351469903, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842569559032593090, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6596,14 +6524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6670,14 +6590,6 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7223,14 +7135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9178705608794295075, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7381,25 +7285,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1585676409745571728, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763321403351469903, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842569559032593090, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8117,14 +8005,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8186,14 +8066,6 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9436,25 +9308,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1585676409745571728, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763321403351469903, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842569559032593090, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9910,25 +9766,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1850084450}
     m_Modifications:
-    - target: {fileID: 2677564705719376389, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093451798515302222, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878199252170233945, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6789180897920854691, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_Name
       value: Barrack (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6789180897920854691, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7439782535688689402, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9969,10 +9809,6 @@ PrefabInstance:
     - target: {fileID: 7439782535688689402, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8679129533926903069, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12077,25 +11913,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1585676409745571728, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763321403351469903, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842569559032593090, guid: 68586960c26ae7841b0824e484134334, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12110,10 +11930,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1534560364}
     m_Modifications:
-    - target: {fileID: 1632698406736480486, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 1937967037470655523, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.161667
@@ -12154,33 +11970,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2137195629245372392, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4543421841115453465, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
       propertyPath: m_Name
       value: Base Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4543421841115453465, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807935429439696291, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6606087996639014727, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7299641470598876878, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7425795174130909081, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12239,14 +12031,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost
       objectReference: {fileID: 0}
-    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9178705608794295075, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12300,6 +12084,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5953809501301596004, guid: 936badc6ba7fa0b4f8cebddc20ef6793, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1616433682}
     - target: {fileID: 9122847582581258430, guid: 936badc6ba7fa0b4f8cebddc20ef6793, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12317,25 +12105,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1850084450}
     m_Modifications:
-    - target: {fileID: 2677564705719376389, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093451798515302222, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878199252170233945, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6789180897920854691, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_Name
       value: Barrack
-      objectReference: {fileID: 0}
-    - target: {fileID: 6789180897920854691, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7439782535688689402, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12376,10 +12148,6 @@ PrefabInstance:
     - target: {fileID: 7439782535688689402, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8679129533926903069, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12438,14 +12206,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost
       objectReference: {fileID: 0}
-    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9170516112342593584, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12459,14 +12219,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1850084450}
     m_Modifications:
-    - target: {fileID: 979865245380911170, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816911579604486646, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3117775390457093125, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.1904793
@@ -12510,18 +12262,6 @@ PrefabInstance:
     - target: {fileID: 4570537879684388551, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
       propertyPath: m_Name
       value: Base Friends
-      objectReference: {fileID: 0}
-    - target: {fileID: 4570537879684388551, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7658914244507615229, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8353704730288159334, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

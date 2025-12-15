@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4711153140420381211}
   - component: {fileID: 8206310283702833514}
   - component: {fileID: 3067947915742491844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Outpost
   m_TagString: EO
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849803084114194523}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

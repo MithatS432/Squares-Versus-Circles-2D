@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227115454920425366}
   - component: {fileID: 8088543970090276248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7909036332733292671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4388050174764842263}
   - component: {fileID: 2069450531513895853}
   - component: {fileID: 6102493801999150083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base Friends
   m_TagString: FB
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5693412948298300292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7530195861696431730}
   - component: {fileID: 5834107279176247706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

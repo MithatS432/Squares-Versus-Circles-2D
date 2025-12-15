@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5653908805577498801}
   - component: {fileID: 1047145477893538956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8929367316846338870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 7085232235343491502}
   - component: {fileID: 8703788183945558491}
   - component: {fileID: 7212415134017662644}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base Enemy
   m_TagString: EB
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8620677890763960815}
   - component: {fileID: 1548872961327911289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389279290049599861}
   - component: {fileID: 7384958434676881102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4984500691735451893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7521484127645112858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

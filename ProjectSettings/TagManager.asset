@@ -12,6 +12,8 @@ TagManager:
   - FO
   - EO
   - EBar
+  - Friends
+  - Enemies
   layers:
   - Default
   - TransparentFX
