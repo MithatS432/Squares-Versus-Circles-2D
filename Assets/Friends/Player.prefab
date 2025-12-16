@@ -384,5 +384,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b201952f6a809874895e2de001e9bf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
-  moveSpeed: 15
+  moveSpeed: 10
+  health: 300
   healthBar: {fileID: 0}
+  coinCount: 0
+  coinText: {fileID: 0}
+  bulletPrefab: {fileID: 7098720388238676999, guid: d2d1e3a590cd36141a7f09b1ad98db5e, type: 3}
+  shootSound: {fileID: 8300000, guid: 9b3105344580b8e4398a19bf68f2f985, type: 3}
+  damageSound: {fileID: 8300000, guid: 39aecddebbd12574a802f48fe54f9002, type: 3}
+  coinSound: {fileID: 8300000, guid: 103cd2de1940566428b706fd77dc6e05, type: 3}
+  friendsPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  friendsPrefabs:
+  - {fileID: 981196760217977138, guid: 471a309d902f65b49b9ee2b073b71011, type: 3}
+  - {fileID: 338702890447373176, guid: 5445d831fde797647ba584a334f5e852, type: 3}
+  - {fileID: 4830284073776390661, guid: 5e667628d95b24b4aac2138b30467a73, type: 3}
+  - {fileID: 6472850930814597077, guid: 74dd6cfa946c0d1468c3d6ff243347f4, type: 3}
+  friendCosts: 190000003200000064000000c8000000
