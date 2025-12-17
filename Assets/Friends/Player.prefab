@@ -390,6 +390,13 @@ MonoBehaviour:
   coinCount: 0
   coinText: {fileID: 0}
   bulletPrefab: {fileID: 7098720388238676999, guid: d2d1e3a590cd36141a7f09b1ad98db5e, type: 3}
+  superPowerBar: {fileID: 0}
+  maxSuperPower: 100
+  isSuperPowerReady: 0
+  isUsingSuperPower: 0
+  pushForce: 40
+  superPowerEffect: {fileID: 3928998189374746443, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
+  superPowerIndicator: {fileID: 8121362396147428242}
   shootSound: {fileID: 8300000, guid: 9b3105344580b8e4398a19bf68f2f985, type: 3}
   damageSound: {fileID: 8300000, guid: 39aecddebbd12574a802f48fe54f9002, type: 3}
   coinSound: {fileID: 8300000, guid: 103cd2de1940566428b706fd77dc6e05, type: 3}
