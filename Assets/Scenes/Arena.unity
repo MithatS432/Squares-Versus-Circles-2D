@@ -5565,7 +5565,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 932210503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560462541}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: SpawnFriend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &932210503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5748,7 +5760,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 980338436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560462541}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: SpawnFriend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &980338436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6371,7 +6395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1101405158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560462541}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: SpawnFriend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1101405158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8045,6 +8081,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 89847169179535638, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
   m_PrefabInstance: {fileID: 1559476567}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1560462541 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5953809501301596004, guid: 936badc6ba7fa0b4f8cebddc20ef6793, type: 3}
+  m_PrefabInstance: {fileID: 3193881324121794239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b201952f6a809874895e2de001e9bf13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
 --- !u!1001 &1584459548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9547,7 +9594,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1802355719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560462541}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: SpawnFriend
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1802355719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12132,6 +12191,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1616433682}
+    - target: {fileID: 5953809501301596004, guid: 936badc6ba7fa0b4f8cebddc20ef6793, type: 3}
+      propertyPath: superPowerBar
+      value: 
+      objectReference: {fileID: 774533810}
     - target: {fileID: 5953809501301596004, guid: 936badc6ba7fa0b4f8cebddc20ef6793, type: 3}
       propertyPath: 'friendsPositions.Array.data[0]'
       value: 

@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class CharacterMovement : MonoBehaviour
@@ -18,6 +21,18 @@ public class CharacterMovement : MonoBehaviour
     public TextMeshProUGUI coinText;
 
     public GameObject bulletPrefab;
+
+    public Image superPowerBar;
+    public int maxSuperPower = 100;
+    private int superPowerAmount = 0;
+
+    public bool isSuperPowerReady = false;
+    public bool isUsingSuperPower = false;
+
+    public float pushForce = 40f;
+    public GameObject superPowerEffect;
+    public GameObject superPowerIndicator;
+
 
     [Header("Sounds")]
     public AudioClip shootSound;
@@ -44,10 +59,33 @@ public class CharacterMovement : MonoBehaviour
         moveSpeed = Input.GetKey(KeyCode.LeftShift) ? 20f : 10f;
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0f;
+
+            Vector2 direction = (mouseWorldPos - transform.position).normalized;
+
+            GameObject bullet = Instantiate(
+                bulletPrefab,
+                transform.position,
+                Quaternion.identity
+            );
+
+            bullet.GetComponent<BulletFriends>().SetDirection(direction);
+
             audioSource.PlayOneShot(shootSound);
-            Destroy(bullet, 1f);
         }
+
+
+        if (isSuperPowerReady && Input.GetKey(KeyCode.Space))
+        {
+            UseSuperPower();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            StopSuperPower();
+        }
+
     }
 
     void FixedUpdate()
@@ -56,6 +94,48 @@ public class CharacterMovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         rb.linearVelocity = new Vector2(x, y) * moveSpeed;
     }
+
+    void UseSuperPower()
+    {
+        if (!isUsingSuperPower)
+        {
+            isUsingSuperPower = true;
+            superPowerEffect.SetActive(true);
+        }
+
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+
+        Vector2 direction = (mouseWorldPos - transform.position).normalized;
+
+        rb.AddForce(direction * pushForce, ForceMode2D.Force);
+
+        superPowerAmount -= 1;
+        superPowerBar.fillAmount = (float)superPowerAmount / maxSuperPower;
+
+        if (superPowerAmount <= 0)
+        {
+            ResetSuperPower();
+        }
+    }
+    void StopSuperPower()
+    {
+        isUsingSuperPower = false;
+        superPowerEffect.SetActive(false);
+    }
+    void ResetSuperPower()
+    {
+        isSuperPowerReady = false;
+        isUsingSuperPower = false;
+
+        superPowerAmount = 0;
+        superPowerBar.fillAmount = 0f;
+
+        superPowerIndicator.SetActive(false);
+        superPowerEffect.SetActive(false);
+    }
+
+
 
 
     // ================= FRIEND SPAWN =================
@@ -84,6 +164,10 @@ public class CharacterMovement : MonoBehaviour
         currentSpawnIndex++;
     }
 
+
+
+
+
     // ================= UI =================
 
     public void AddCoin(int amount)
@@ -103,4 +187,20 @@ public class CharacterMovement : MonoBehaviour
         coinText.text = coinCount.ToString();
         healthBar.text = health.ToString("0");
     }
+    public void AddSuperPower(int amount)
+    {
+        if (isSuperPowerReady) return;
+
+        superPowerAmount += amount;
+        superPowerAmount = Mathf.Clamp(superPowerAmount, 0, maxSuperPower);
+
+        superPowerBar.fillAmount = (float)superPowerAmount / maxSuperPower;
+
+        if (superPowerAmount >= maxSuperPower)
+        {
+            isSuperPowerReady = true;
+            superPowerIndicator.SetActive(true);
+        }
+    }
+
 }
