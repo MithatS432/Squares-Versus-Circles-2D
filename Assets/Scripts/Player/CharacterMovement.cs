@@ -31,13 +31,25 @@ public class CharacterMovement : MonoBehaviour
 
     public float pushForce = 40f;
     public GameObject superPowerEffect;
+    private ParticleSystem superPS;
+
     public GameObject superPowerIndicator;
+
+
+    public int maxAmmo = 20;
+    private int currentAmmo;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
 
 
     [Header("Sounds")]
     public AudioClip shootSound;
     public AudioClip damageSound;
     public AudioClip coinSound;
+    public AudioClip effectSound;
+    public AudioClip lostSound;
+    public AudioClip reloudSound;
+
 
 
     [Header("Friends System")]
@@ -46,47 +58,74 @@ public class CharacterMovement : MonoBehaviour
     public int[] friendCosts;
     private int currentSpawnIndex = 0;
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         UpdateUI();
+        currentAmmo = maxAmmo;
+        superPS = superPowerEffect.GetComponentInChildren<ParticleSystem>();
+        superPowerEffect.SetActive(false);
+
     }
 
     void Update()
     {
         moveSpeed = Input.GetKey(KeyCode.LeftShift) ? 20f : 10f;
+
+        if (isReloading)
+            return;
+
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0f;
+            if (currentAmmo <= 0)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
 
-            Vector2 direction = (mouseWorldPos - transform.position).normalized;
-
-            GameObject bullet = Instantiate(
-                bulletPrefab,
-                transform.position,
-                Quaternion.identity
-            );
-
-            bullet.GetComponent<BulletFriends>().SetDirection(direction);
-
-            audioSource.PlayOneShot(shootSound);
+            Shoot();
         }
-
 
         if (isSuperPowerReady && Input.GetKey(KeyCode.Space))
         {
             UseSuperPower();
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            StopSuperPower();
-        }
-
     }
+    void Shoot()
+    {
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+
+        Vector2 direction = (mouseWorldPos - transform.position).normalized;
+
+        GameObject bullet = Instantiate(
+            bulletPrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        bullet.GetComponent<BulletFriends>().SetDirection(direction);
+
+        audioSource.PlayOneShot(shootSound);
+
+        currentAmmo--;
+    }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        audioSource.PlayOneShot(reloudSound);
+
+        yield return new WaitForSeconds(reloadTime);
+
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+
 
     void FixedUpdate()
     {
@@ -101,27 +140,25 @@ public class CharacterMovement : MonoBehaviour
         {
             isUsingSuperPower = true;
             superPowerEffect.SetActive(true);
+            superPS.Play();
+
+            audioSource.PlayOneShot(effectSound);
+            animator.SetTrigger("Power");
         }
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
 
         Vector2 direction = (mouseWorldPos - transform.position).normalized;
-
         rb.AddForce(direction * pushForce, ForceMode2D.Force);
 
-        superPowerAmount -= 1;
+        superPowerAmount--;
         superPowerBar.fillAmount = (float)superPowerAmount / maxSuperPower;
 
         if (superPowerAmount <= 0)
         {
             ResetSuperPower();
         }
-    }
-    void StopSuperPower()
-    {
-        isUsingSuperPower = false;
-        superPowerEffect.SetActive(false);
     }
     void ResetSuperPower()
     {
@@ -132,8 +169,11 @@ public class CharacterMovement : MonoBehaviour
         superPowerBar.fillAmount = 0f;
 
         superPowerIndicator.SetActive(false);
+
+        superPS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         superPowerEffect.SetActive(false);
     }
+
 
 
 
@@ -173,13 +213,24 @@ public class CharacterMovement : MonoBehaviour
     public void AddCoin(int amount)
     {
         coinCount = Mathf.Max(0, coinCount + amount);
+        audioSource.PlayOneShot(coinSound);
         UpdateUI();
     }
 
     public void GetDamage(float dmg)
     {
         health -= dmg;
+        audioSource.PlayOneShot(damageSound);
         UpdateUI();
+        if (health <= 0)
+        {
+            audioSource.PlayOneShot(lostSound);
+            Invoke("RestartGame", 2f);
+        }
+    }
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void UpdateUI()
@@ -199,6 +250,7 @@ public class CharacterMovement : MonoBehaviour
         if (superPowerAmount >= maxSuperPower)
         {
             isSuperPowerReady = true;
+            animator.SetBool("IsPower", true);
             superPowerIndicator.SetActive(true);
         }
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5984267519233665850}
   - component: {fileID: 6813341408270422144}
   - component: {fileID: 3876371145560118268}
+  - component: {fileID: -6988977801218788004}
   m_Layer: 0
   m_Name: Friends3
   m_TagString: Friends
@@ -260,3 +261,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6988977801218788004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4830284073776390661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916a312b3da7c3449a567dff8501ecb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
