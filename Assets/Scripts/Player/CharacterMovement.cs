@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -30,6 +31,7 @@ public class CharacterMovement : MonoBehaviour
     public bool isUsingSuperPower = false;
 
     public float pushForce = 40f;
+    private float superPowerDamage = 50f;
     public GameObject superPowerEffect;
     private ParticleSystem superPS;
 
@@ -53,10 +55,11 @@ public class CharacterMovement : MonoBehaviour
 
 
     [Header("Friends System")]
-    public Transform[] friendsPositions;
     public GameObject[] friendsPrefabs;
     public int[] friendCosts;
-    private int currentSpawnIndex = 0;
+    private List<Transform> activeSpawnPoints = new List<Transform>();
+
+
 
 
 
@@ -182,26 +185,38 @@ public class CharacterMovement : MonoBehaviour
 
     public void SpawnFriend(int friendIndex)
     {
-        if (currentSpawnIndex >= friendsPositions.Length)
+        if (activeSpawnPoints.Count == 0)
             return;
 
         if (friendIndex < 0 || friendIndex >= friendsPrefabs.Length)
             return;
 
         int cost = friendCosts[friendIndex];
-
         if (coinCount < cost)
             return;
 
         AddCoin(-cost);
 
+        Transform spawnPoint = activeSpawnPoints[0];
+        activeSpawnPoints.RemoveAt(0);
+
         Instantiate(
             friendsPrefabs[friendIndex],
-            friendsPositions[currentSpawnIndex].position,
+            spawnPoint.position,
             Quaternion.identity
         );
+    }
 
-        currentSpawnIndex++;
+    public void RegisterBarrack(Barrack barrack)
+    {
+        foreach (Transform t in barrack.spawnPoints)
+            activeSpawnPoints.Add(t);
+    }
+
+    public void UnregisterBarrack(Barrack barrack)
+    {
+        foreach (Transform t in barrack.spawnPoints)
+            activeSpawnPoints.Remove(t);
     }
 
 
@@ -252,6 +267,17 @@ public class CharacterMovement : MonoBehaviour
             isSuperPowerReady = true;
             animator.SetBool("IsPower", true);
             superPowerIndicator.SetActive(true);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemies") && isUsingSuperPower)
+        {
+            Enemies enemy = other.gameObject.GetComponent<Enemies>();
+            if (enemy != null)
+            {
+                enemy.GetDamage(superPowerDamage);
+            }
         }
     }
 

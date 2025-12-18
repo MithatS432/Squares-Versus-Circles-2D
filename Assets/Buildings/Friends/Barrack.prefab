@@ -106,9 +106,10 @@ GameObject:
   - component: {fileID: 3668912334465207861}
   - component: {fileID: 2292276570354861483}
   - component: {fileID: 1174058554792325038}
+  - component: {fileID: 9084602041423208506}
   m_Layer: 6
   m_Name: Barrack
-  m_TagString: FBar
+  m_TagString: Friends
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,6 +358,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &9084602041423208506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789180897920854691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced50c413bdb4dc49a4efca85b676e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
 --- !u!1 &8679129533926903069
 GameObject:
   m_ObjectHideFlags: 0

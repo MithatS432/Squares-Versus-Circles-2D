@@ -4,6 +4,7 @@ public class BulletFriends : MonoBehaviour
 {
     public float speed = 20f;
     public float lifeTime = 1.5f;
+    private float damage = 15f;
 
     private Vector2 direction;
     private LayerMask enemyLayer;
@@ -31,6 +32,11 @@ public class BulletFriends : MonoBehaviour
         if (((1 << other.gameObject.layer) & enemyLayer) != 0)
         {
             Destroy(gameObject);
+            Enemies enemy = other.GetComponent<Enemies>();
+            if (enemy != null)
+            {
+                enemy.GetDamage(damage);
+            }
         }
     }
 }

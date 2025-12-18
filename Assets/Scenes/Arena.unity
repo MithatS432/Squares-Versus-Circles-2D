@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -680,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1755,6 +1763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2481,6 +2493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
+      propertyPath: m_TagString
+      value: Friends
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3176,11 +3192,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &570857893 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4543421841115453465, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-  m_PrefabInstance: {fileID: 1325211090507810417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &597397601
 GameObject:
   m_ObjectHideFlags: 0
@@ -4678,6 +4689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
+      propertyPath: m_TagString
+      value: Friends
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5739,6 +5754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barracks (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6152,6 +6171,10 @@ PrefabInstance:
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6704,6 +6727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6827,6 +6854,10 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7402,6 +7433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
+      propertyPath: m_TagString
+      value: Friends
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7582,6 +7617,10 @@ PrefabInstance:
     - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
       propertyPath: m_Name
       value: Barracks (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8334,6 +8373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outpost (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8436,6 +8479,10 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9754,6 +9801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barracks (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10299,6 +10350,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1648533626}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 384832317}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1021495703}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 28950952}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12157,33 +12228,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1937967037470655523, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
   m_PrefabInstance: {fileID: 1325211090507810417}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &2088332030
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570857893}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1 &2104851153
 GameObject:
   m_ObjectHideFlags: 0
@@ -12497,6 +12541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barracks
       objectReference: {fileID: 0}
+    - target: {fileID: 2968470750934973597, guid: 68586960c26ae7841b0824e484134334, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12560,10 +12608,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4543421841115453465, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2088332030}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b303d8fc5d26842a63f259f137ad21, type: 3}
 --- !u!1001 &2935744535127054237
 PrefabInstance:
@@ -12616,6 +12661,10 @@ PrefabInstance:
     - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
       propertyPath: m_Name
       value: Outpost
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219331361627560211, guid: d2cf2a99c269e4a4ca2f4ce578ca6434, type: 3}
+      propertyPath: m_TagString
+      value: Friends
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12775,6 +12824,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 77899039}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1727304247}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 297969952}
+    - target: {fileID: 9084602041423208506, guid: c000a8466b3e60543b826401b632c7d3, type: 3}
+      propertyPath: 'spawnPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 121451320}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12831,6 +12900,10 @@ PrefabInstance:
     - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
       propertyPath: m_Name
       value: Outpost
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358155439337687703, guid: 173f8a2aaf3ea3b43b8d0a32a1e7ff23, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12891,6 +12964,10 @@ PrefabInstance:
     - target: {fileID: 4570537879684388551, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
       propertyPath: m_Name
       value: Base Friends
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570537879684388551, guid: 02330c35341ef514da895b439a5f1c3a, type: 3}
+      propertyPath: m_TagString
+      value: Friends
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
