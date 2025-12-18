@@ -50,7 +50,8 @@ public class CharacterMovement : MonoBehaviour
     public AudioClip coinSound;
     public AudioClip effectSound;
     public AudioClip lostSound;
-    public AudioClip reloudSound;
+    public AudioClip reloadSound;
+    public AudioClip friendSpawnSound;
 
 
 
@@ -58,6 +59,8 @@ public class CharacterMovement : MonoBehaviour
     public GameObject[] friendsPrefabs;
     public int[] friendCosts;
     private List<Transform> activeSpawnPoints = new List<Transform>();
+    public FriendsBuilding mainHouseScript;
+
 
 
 
@@ -72,7 +75,6 @@ public class CharacterMovement : MonoBehaviour
         currentAmmo = maxAmmo;
         superPS = superPowerEffect.GetComponentInChildren<ParticleSystem>();
         superPowerEffect.SetActive(false);
-
     }
 
     void Update()
@@ -96,6 +98,10 @@ public class CharacterMovement : MonoBehaviour
         if (isSuperPowerReady && Input.GetKey(KeyCode.Space))
         {
             UseSuperPower();
+        }
+        if (mainHouseScript != null && mainHouseScript.health <= 0)
+        {
+            Invoke(nameof(RestartGame), 2f);
         }
     }
     void Shoot()
@@ -121,7 +127,7 @@ public class CharacterMovement : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        audioSource.PlayOneShot(reloudSound);
+        audioSource.PlayOneShot(reloadSound);
 
         yield return new WaitForSeconds(reloadTime);
 
@@ -205,6 +211,7 @@ public class CharacterMovement : MonoBehaviour
             spawnPoint.position,
             Quaternion.identity
         );
+        audioSource.PlayOneShot(friendSpawnSound);
     }
 
     public void RegisterBarrack(Barrack barrack)

@@ -350,7 +350,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1788278314974154592
 Animator:
   serializedVersion: 7
@@ -405,16 +405,8 @@ MonoBehaviour:
   coinSound: {fileID: 8300000, guid: 103cd2de1940566428b706fd77dc6e05, type: 3}
   effectSound: {fileID: 8300000, guid: f6ddd14a8d4f3c542ba8a1e46af2b3a8, type: 3}
   lostSound: {fileID: 8300000, guid: 86fbab108de09334687609aed145655b, type: 3}
-  reloudSound: {fileID: 8300000, guid: 3fed117afbe60c04598541b3b661ddfb, type: 3}
-  friendsPositions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  reloadSound: {fileID: 8300000, guid: 3fed117afbe60c04598541b3b661ddfb, type: 3}
+  friendSpawnSound: {fileID: 8300000, guid: 99cff9f8f7a3ba24f9e529074818cb2b, type: 3}
   friendsPrefabs:
   - {fileID: 981196760217977138, guid: 471a309d902f65b49b9ee2b073b71011, type: 3}
   - {fileID: 338702890447373176, guid: 5445d831fde797647ba584a334f5e852, type: 3}

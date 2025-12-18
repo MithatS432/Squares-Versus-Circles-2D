@@ -1,11 +1,12 @@
 using UnityEngine;
-
+using TMPro;
 public class Barrack : MonoBehaviour
 {
     public Transform[] spawnPoints;
     private CharacterMovement player;
 
     public float health = 300f;
+    public TextMeshProUGUI healthBar;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class Barrack : MonoBehaviour
     void GetDamage(float dmg)
     {
         health -= dmg;
+        healthBar.text = health.ToString();
         if (health <= 0f)
         {
             Destroy(gameObject);
