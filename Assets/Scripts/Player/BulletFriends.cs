@@ -29,13 +29,33 @@ public class BulletFriends : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & enemyLayer) != 0)
+        // LayerMask ile karşılaştırma
+        if (((1 << other.gameObject.layer) & enemyLayer.value) != 0)
         {
             Destroy(gameObject);
+
             Enemies enemy = other.GetComponent<Enemies>();
             if (enemy != null)
             {
-                enemy.GetDamage(damage);
+                enemy.GetDamage((int)damage);
+            }
+
+            Outpost outpost = other.GetComponent<Outpost>();
+            if (outpost != null)
+            {
+                outpost.GetDamage((int)damage);
+            }
+
+            BarrackEnemy bar = other.GetComponent<BarrackEnemy>();
+            if (bar != null)
+            {
+                bar.GetDamage((int)damage);
+            }
+
+            EnemyBase baseenemy = other.GetComponent<EnemyBase>();
+            if (baseenemy != null)
+            {
+                baseenemy.GetDamage((int)damage);
             }
         }
     }

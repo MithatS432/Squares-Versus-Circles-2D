@@ -19,7 +19,7 @@ public class Barrack : MonoBehaviour
         if (player != null)
             player.UnregisterBarrack(this);
     }
-    void GetDamage(float dmg)
+    public void GetDamage(float dmg)
     {
         health -= dmg;
         healthBar.text = health.ToString();

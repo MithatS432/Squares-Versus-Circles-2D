@@ -273,16 +273,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916a312b3da7c3449a567dff8501ecb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: {fileID: 8300000, guid: 9b3105344580b8e4398a19bf68f2f985, type: 3}
-  reloadSound: {fileID: 8300000, guid: 3fed117afbe60c04598541b3b661ddfb, type: 3}
-  deadSound: {fileID: 8300000, guid: 39aecddebbd12574a802f48fe54f9002, type: 3}
-  speed: 12
+  maxHealth: 100
   health: 180
+  moveSpeed: 13
   bulletPrefab: {fileID: 7098720388238676999, guid: d2d1e3a590cd36141a7f09b1ad98db5e, type: 3}
+  bulletSpeed: 8
+  fireCooldown: 0.5
   maxAmmo: 5
   reloadTime: 1
-  detectionRange: 20
-  fireRate: 5
-  fireCooldown: 0.5
-  rollDamage: 30
-  isSuperPowered: 0
+  detectionRange: 10
+  retreatRange: 3
+  specialForce: 20
+  specialDamage: 30
+  specialCooldown: 5
+  specialDuration: 0.5
+  currentState: 0
+  shootSound: {fileID: 8300000, guid: 9b3105344580b8e4398a19bf68f2f985, type: 3}
+  reloadSound: {fileID: 8300000, guid: 3fed117afbe60c04598541b3b661ddfb, type: 3}
+  specialSound: {fileID: 8300000, guid: f6ddd14a8d4f3c542ba8a1e46af2b3a8, type: 3}
+  deathSound: {fileID: 8300000, guid: 39aecddebbd12574a802f48fe54f9002, type: 3}

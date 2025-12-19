@@ -16,6 +16,7 @@ public class Friends : MonoBehaviour
     [Header("Components")]
     private Rigidbody2D rb;
     private Animator animator;
+    AudioSource audioSource;
 
     [Header("Stats")]
     public float maxHealth = 100f;
@@ -49,10 +50,25 @@ public class Friends : MonoBehaviour
 
     public FriendState currentState = FriendState.MoveForward;
 
+    [Header("Audio")]
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
+    public AudioClip specialSound;
+    public AudioClip deathSound;
+
+
+    [Header("Engage Vertical Movement")]
+    public float verticalMoveAmplitude = 1.5f;
+    public float verticalMoveSpeed = 3f;
+    private float verticalMoveTime;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         currentAmmo = maxAmmo;
         fireTimer = 0f;
@@ -117,7 +133,9 @@ public class Friends : MonoBehaviour
             return;
         }
 
-        rb.linearVelocity = Vector2.zero;
+        // Yukarı–aşağı rastgele (organik) hareket
+        float randomY = Mathf.PerlinNoise(Time.time, 0f) - 0.5f;
+        rb.linearVelocity = new Vector2(0f, randomY * moveSpeed);
 
         if (currentAmmo <= 0 && !isReloading)
         {
@@ -132,6 +150,8 @@ public class Friends : MonoBehaviour
             fireTimer = fireCooldown;
         }
     }
+
+
 
     void Retreat(GameObject enemy)
     {
@@ -153,6 +173,7 @@ public class Friends : MonoBehaviour
         isUsingSpecial = true;
         specialTimer = specialCooldown;
         currentState = FriendState.Engage;
+        audioSource.PlayOneShot(specialSound);
 
         rb.linearVelocity = Vector2.zero;
 
@@ -172,6 +193,7 @@ public class Friends : MonoBehaviour
     void Shoot(Transform target)
     {
         currentAmmo--;
+        audioSource.PlayOneShot(shootSound);
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Vector2 direction = (target.position - transform.position).normalized;
@@ -183,6 +205,7 @@ public class Friends : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        audioSource.PlayOneShot(reloadSound);
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;
@@ -194,7 +217,7 @@ public class Friends : MonoBehaviour
     {
         if (!isUsingSpecial) return;
 
-        if (collision.gameObject.CompareTag("Enemies"))
+        if (collision.gameObject.CompareTag("Enemies") && isUsingSpecial)
         {
             Enemies enemy = collision.gameObject.GetComponent<Enemies>();
             if (enemy != null)
@@ -240,6 +263,8 @@ public class Friends : MonoBehaviour
         if (health <= 0)
         {
             currentState = FriendState.Dead;
+            rb.linearVelocity = Vector2.zero;
+            audioSource.PlayOneShot(deathSound);
             Destroy(gameObject);
         }
     }

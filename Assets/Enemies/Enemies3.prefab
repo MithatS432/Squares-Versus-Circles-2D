@@ -263,4 +263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6eb3c29f0b2b5a41b3c11c8d21b6f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 200
+  moveSpeed: 6
+  superPowerScore: 10
+  bulletPrefab: {fileID: 4466566372172174672, guid: 36689f7ab77152146b55f7256fb05b6f, type: 3}
+  attackRange: 15
+  fireCooldown: 2
+  addCoin: 25
+  shootSound: {fileID: 8300000, guid: 9b3105344580b8e4398a19bf68f2f985, type: 3}
+  deathSound: {fileID: 8300000, guid: 39aecddebbd12574a802f48fe54f9002, type: 3}

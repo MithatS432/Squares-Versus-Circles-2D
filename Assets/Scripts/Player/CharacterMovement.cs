@@ -91,19 +91,66 @@ public class CharacterMovement : MonoBehaviour
                 StartCoroutine(Reload());
                 return;
             }
-
             Shoot();
         }
 
-        if (isSuperPowerReady && Input.GetKey(KeyCode.Space))
+        // SÜPER GÜÇ KONTROLÜNÜ DEĞİŞTİRİN:
+        if (isSuperPowerReady)
         {
-            UseSuperPower();
+            // Space'e basıldığında aktif et
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ActivateSuperPower();
+            }
+
+            // Space basılı tutulduğu sürece
+            if (isUsingSuperPower && Input.GetKey(KeyCode.Space))
+            {
+                MaintainSuperPower();
+            }
+
+            // Space bırakıldığında gücü uygula
+            if (isUsingSuperPower && Input.GetKeyUp(KeyCode.Space))
+            {
+                ApplySuperPower();
+            }
         }
+
         if (mainHouseScript != null && mainHouseScript.health <= 0)
         {
             Invoke(nameof(RestartGame), 2f);
         }
     }
+    void ActivateSuperPower()
+    {
+        if (!isUsingSuperPower)
+        {
+            isUsingSuperPower = true;
+            superPowerEffect.transform.position = transform.position;
+            superPowerEffect.SetActive(true);
+
+            superPS.Clear();
+            superPS.Play();
+
+            audioSource.PlayOneShot(effectSound);
+            animator.SetTrigger("Power");
+        }
+    }
+
+    void MaintainSuperPower()
+    {
+        // Süper güç aktifken mouse'u takip et
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
+
+        Vector2 direction = (mouseWorldPos - transform.position).normalized;
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            superPowerEffect.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
     void Shoot()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -143,32 +190,29 @@ public class CharacterMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(x, y) * moveSpeed;
     }
 
-    void UseSuperPower()
+
+
+
+    void ApplySuperPower()
     {
-        if (!isUsingSuperPower)
-        {
-            isUsingSuperPower = true;
-            superPowerEffect.SetActive(true);
-            superPS.Play();
-
-            audioSource.PlayOneShot(effectSound);
-            animator.SetTrigger("Power");
-        }
-
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
 
         Vector2 direction = (mouseWorldPos - transform.position).normalized;
-        rb.AddForce(direction * pushForce, ForceMode2D.Force);
 
-        superPowerAmount--;
-        superPowerBar.fillAmount = (float)superPowerAmount / maxSuperPower;
-
-        if (superPowerAmount <= 0)
+        if (direction.magnitude < 0.1f)
         {
-            ResetSuperPower();
+            direction = transform.right;
         }
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(direction * pushForce, ForceMode2D.Impulse);
+
+        // Tek kullanımlık olsun diye direkt sıfırla
+        ResetSuperPower();
     }
+
+
     void ResetSuperPower()
     {
         isSuperPowerReady = false;
@@ -177,10 +221,14 @@ public class CharacterMovement : MonoBehaviour
         superPowerAmount = 0;
         superPowerBar.fillAmount = 0f;
 
+        // Indicator kapat
         superPowerIndicator.SetActive(false);
 
+        // Efekti durdur ve kapat
         superPS.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         superPowerEffect.SetActive(false);
+
+        animator.SetBool("IsPower", false);
     }
 
 
@@ -273,9 +321,17 @@ public class CharacterMovement : MonoBehaviour
         {
             isSuperPowerReady = true;
             animator.SetBool("IsPower", true);
+
             superPowerIndicator.SetActive(true);
+
+            superPowerEffect.SetActive(true);
+            superPS.Clear();
+            superPS.Play();
+
+            audioSource.PlayOneShot(effectSound);
         }
     }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemies") && isUsingSuperPower)
