@@ -281,3 +281,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7098720388238676999, guid: d2d1e3a590cd36141a7f09b1ad98db5e, type: 3}
   maxAmmo: 5
   reloadTime: 1
+  detectionRange: 20
+  fireRate: 1
+  fireCooldown: 2
+  rollDamage: 30
+  isSuperPowered: 0
