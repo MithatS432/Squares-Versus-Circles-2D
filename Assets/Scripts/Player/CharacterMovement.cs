@@ -43,6 +43,9 @@ public class CharacterMovement : MonoBehaviour
     public float reloadTime = 1f;
     private bool isReloading = false;
 
+    private bool canMove = true;
+
+
 
     [Header("Sounds")]
     public AudioClip shootSound;
@@ -60,6 +63,8 @@ public class CharacterMovement : MonoBehaviour
     public int[] friendCosts;
     private List<Transform> activeSpawnPoints = new List<Transform>();
     public FriendsBuilding mainHouseScript;
+    public EnemyBase enemyBaseScript;
+    public TextMeshProUGUI debugText;
 
 
 
@@ -94,32 +99,32 @@ public class CharacterMovement : MonoBehaviour
             Shoot();
         }
 
-        // SÜPER GÜÇ KONTROLÜNÜ DEĞİŞTİRİN:
         if (isSuperPowerReady)
         {
-            // Space'e basıldığında aktif et
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
-                ActivateSuperPower();
-            }
-
-            // Space basılı tutulduğu sürece
-            if (isUsingSuperPower && Input.GetKey(KeyCode.Space))
-            {
+                if (!isUsingSuperPower)
+                {
+                    isUsingSuperPower = true;
+                    superPowerEffect.SetActive(true);
+                    superPS.Play();
+                }
                 MaintainSuperPower();
             }
-
-            // Space bırakıldığında gücü uygula
-            if (isUsingSuperPower && Input.GetKeyUp(KeyCode.Space))
+            else if (isUsingSuperPower && Input.GetKeyUp(KeyCode.Space))
             {
-                ApplySuperPower();
+                ResetSuperPower();
             }
         }
 
-        if (mainHouseScript != null && mainHouseScript.health <= 0)
+        if (health <= 0 || (mainHouseScript != null && mainHouseScript.health <= 0) ||
+    (enemyBaseScript != null && enemyBaseScript.enemybasecount <= 0))
         {
+            canMove = false;
+            rb.linearVelocity = Vector2.zero;
             Invoke(nameof(RestartGame), 2f);
         }
+
     }
     void ActivateSuperPower()
     {
@@ -139,17 +144,16 @@ public class CharacterMovement : MonoBehaviour
 
     void MaintainSuperPower()
     {
-        // Süper güç aktifken mouse'u takip et
+        if (!isUsingSuperPower || !canMove) return;
+
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f;
+        mouseWorldPos.z = transform.position.z;
 
         Vector2 direction = (mouseWorldPos - transform.position).normalized;
-        if (direction != Vector2.zero)
-        {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            superPowerEffect.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
+        rb.linearVelocity = direction * pushForce;
     }
+
+
 
     void Shoot()
     {
@@ -185,6 +189,12 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!canMove)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         rb.linearVelocity = new Vector2(x, y) * moveSpeed;
@@ -254,13 +264,17 @@ public class CharacterMovement : MonoBehaviour
         Transform spawnPoint = activeSpawnPoints[0];
         activeSpawnPoints.RemoveAt(0);
 
-        Instantiate(
-            friendsPrefabs[friendIndex],
-            spawnPoint.position,
-            Quaternion.identity
-        );
+        GameObject friend = Instantiate(friendsPrefabs[friendIndex], spawnPoint.position, Quaternion.identity);
         audioSource.PlayOneShot(friendSpawnSound);
+
+        // Friend öldüğünde spawn noktasını geri ekle
+        Friends fScript = friend.GetComponent<Friends>();
+        if (fScript != null)
+        {
+            fScript.OnDeath = (t) => { activeSpawnPoints.Add(spawnPoint); };
+        }
     }
+
 
     public void RegisterBarrack(Barrack barrack)
     {
@@ -295,6 +309,7 @@ public class CharacterMovement : MonoBehaviour
         if (health <= 0)
         {
             audioSource.PlayOneShot(lostSound);
+            rb.linearVelocity = Vector2.zero;
             Invoke("RestartGame", 2f);
         }
     }

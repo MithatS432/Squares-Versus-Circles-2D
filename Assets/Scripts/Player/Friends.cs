@@ -61,6 +61,8 @@ public class Friends : MonoBehaviour
     public float verticalMoveAmplitude = 1.5f;
     public float verticalMoveSpeed = 3f;
     private float verticalMoveTime;
+    public System.Action<Transform> OnDeath;
+
 
 
 
@@ -122,7 +124,18 @@ public class Friends : MonoBehaviour
 
     void MoveForward()
     {
-        rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
+        // Hedefe doğru hareket et
+        GameObject enemy = FindClosestEnemy();
+        if (enemy != null)
+        {
+            Vector2 dir = (enemy.transform.position - transform.position).normalized;
+            rb.linearVelocity = dir * moveSpeed;
+        }
+        else
+        {
+            // Eğer düşman yoksa sağa doğru sabit hareket
+            rb.linearVelocity = new Vector2(moveSpeed, 0f);
+        }
     }
 
     void EngageEnemy(GameObject enemy)
@@ -133,14 +146,41 @@ public class Friends : MonoBehaviour
             return;
         }
 
-        // Yukarı–aşağı rastgele (organik) hareket
-        float randomY = Mathf.PerlinNoise(Time.time, 0f) - 0.5f;
-        rb.linearVelocity = new Vector2(0f, randomY * moveSpeed);
+        // MENZİL KORUMA EKLE:
+        Vector2 dirToEnemy = enemy.transform.position - transform.position;
+        float distance = dirToEnemy.magnitude;
 
+        // İdeal mesafe (5-8 unit arası)
+        float minRange = 5f;
+        float maxRange = 8f;
+
+        // Mesafeyi ayarla
+        if (distance < minRange)
+        {
+            // Çok yakınsa geri çekil
+            Vector2 retreatDir = -dirToEnemy.normalized;
+            rb.linearVelocity = retreatDir * moveSpeed;
+        }
+        else if (distance > maxRange)
+        {
+            // Çok uzaksa yaklaş
+            Vector2 approachDir = dirToEnemy.normalized;
+            rb.linearVelocity = approachDir * moveSpeed;
+        }
+        else
+        {
+            float yOffset = Mathf.Sin(Time.time * verticalMoveSpeed) * verticalMoveAmplitude;
+            rb.linearVelocity = new Vector2(0f, yOffset);
+        }
+
+        Vector2 lookDir = dirToEnemy.normalized;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+
+        // Ateş et
         if (currentAmmo <= 0 && !isReloading)
         {
             StartCoroutine(Reload());
-            currentState = FriendState.Reload;
             return;
         }
 
@@ -196,10 +236,18 @@ public class Friends : MonoBehaviour
         audioSource.PlayOneShot(shootSound);
 
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
         Vector2 direction = (target.position - transform.position).normalized;
 
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        bulletRb.linearVelocity = direction * bulletSpeed;
+        if (bulletRb != null)
+        {
+            bulletRb.linearVelocity = direction * bulletSpeed;
+
+            // Mermiyi yönüne çevir
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            bullet.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     IEnumerator Reload()
@@ -265,6 +313,9 @@ public class Friends : MonoBehaviour
             currentState = FriendState.Dead;
             rb.linearVelocity = Vector2.zero;
             audioSource.PlayOneShot(deathSound);
+
+            OnDeath?.Invoke(transform);
+
             Destroy(gameObject);
         }
     }

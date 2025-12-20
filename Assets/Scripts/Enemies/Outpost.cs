@@ -34,9 +34,18 @@ public class Outpost : MonoBehaviour
     {
         fireCooldown -= Time.deltaTime;
 
-        Transform target = null;
+        targets.Clear();
 
-        // Menzil içindeki ilk hedefi bul
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            targets.Add(playerObj.transform);
+
+        GameObject[] friendsObjs = GameObject.FindGameObjectsWithTag("Friends");
+        foreach (GameObject friend in friendsObjs)
+            targets.Add(friend.transform);
+
+        // Menzil kontrolü ve ateşleme
+        Transform target = null;
         foreach (Transform t in targets)
         {
             if (t != null && Vector3.Distance(transform.position, t.position) <= detectionRange)
@@ -53,20 +62,24 @@ public class Outpost : MonoBehaviour
         }
     }
 
+
     void Fire(Transform target)
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(shotSound, transform.position);
 
         Vector3 direction = (target.position - firePoint.position).normalized;
-        bullet.transform.forward = direction;
 
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bullet.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.linearVelocity = direction * 20f;
         }
     }
+
 
     private void OnDrawGizmosSelected()
     {

@@ -422,6 +422,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2319769636464889302}
     m_Modifications:
+    - target: {fileID: 87941992657027768, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380849801404972442, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3928998189374746443, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
       propertyPath: m_Name
       value: Crystal effect green
@@ -469,6 +477,14 @@ PrefabInstance:
     - target: {fileID: 4027744226266032311, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614708994410852699, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253840376586668916, guid: 00bba72dbda252a4eac12e218848cb44, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
