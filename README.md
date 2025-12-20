@@ -33,3 +33,6 @@ Algorithm type: Physics engine + force vector
 Algorithm type: Constrained optimization
 
 Algorithm type: List-based resource management
+
+![Algorithms Results](Assets/Algorithms%20Results.png)
+
