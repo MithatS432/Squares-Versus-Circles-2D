@@ -34,5 +34,7 @@ Algorithm type: Constrained optimization
 
 Algorithm type: List-based resource management
 
+# Results
+
 ![Algorithms Results](Assets/Algorithms%20Results.png)
 
